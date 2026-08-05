@@ -2249,3 +2249,42 @@ html {
 .bio {
   white-space: normal;
 }
+
+/*-----------------------------------*\
+  #SITE STATISTICS
+\*-----------------------------------*/
+
+.site-footer {
+  display: flex;
+  justify-content: center;
+  min-width: 259px;
+  margin: -35px 12px 30px;
+}
+
+.visitor-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+}
+
+.visitor-count ion-icon {
+  color: var(--orange-yellow-crayola);
+  font-size: 16px;
+}
+
+.visitor-count__number {
+  color: var(--light-gray);
+  font-weight: var(--fw-500);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (min-width: 580px) {
+  .site-footer { margin-top: -60px; }
+}
+
+@media (min-width: 1024px) {
+  .site-footer { margin-top: -35px; }
+}
