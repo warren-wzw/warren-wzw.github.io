@@ -1011,7 +1011,8 @@ main {
 
 .timeline { margin-bottom: 30px; }
 
-.timeline .title-wrapper {
+.timeline .title-wrapper,
+.blog-posts .title-wrapper {
   display: flex;
   align-items: center;
   gap: 15px;
