@@ -1402,6 +1402,30 @@ main {
   line-height: 1.6;
 }
 
+.publication-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.publication-link {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-600);
+  text-decoration: none;
+  transition: opacity var(--transition-1);
+}
+
+a.publication-link:hover { opacity: 0.72; }
+
+.publication-link.is-disabled {
+  color: var(--light-gray-70);
+  cursor: default;
+  opacity: 0.55;
+}
+
+.publication-link-separator { color: var(--light-gray-70); }
+
 
 
 
