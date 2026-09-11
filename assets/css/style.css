@@ -475,17 +475,52 @@ main {
 }
 
 /* Keep the always-visible contact block compact at every screen size. */
-.sidebar .separator { margin: 18px 0; }
+.sidebar .separator { margin: 12px 0; }
 
 .sidebar .contacts-list {
   grid-template-columns: 1fr;
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 0;
+  grid-column: 1 / -1;
 }
 
 .sidebar .info-content { min-width: 0; }
 
 .sidebar .avatar-box { flex-shrink: 0; }
+
+.sidebar[data-sidebar] { padding: 16px; }
+
+.sidebar .sidebar-info {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+}
+
+.sidebar .avatar-box img {
+  width: 80px;
+  height: 106px;
+  object-fit: contain;
+}
+
+@media (min-width: 768px) {
+  .sidebar[data-sidebar] { padding: 18px 24px; }
+
+  .sidebar .sidebar-info {
+    grid-template-columns: auto minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 24px;
+  }
+
+  .sidebar .contacts-list {
+    grid-column: 3;
+    grid-row: 1;
+    gap: 10px;
+  }
+
+  .sidebar .avatar-box img {
+    width: 96px;
+    height: 128px;
+  }
+}
 
 .sidebar .social-list {
   justify-content: center;
