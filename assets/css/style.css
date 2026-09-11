@@ -529,7 +529,7 @@ main {
 
 .sidebar .contact-item { gap: 12px; }
 
-.sidebar .contact-item ion-icon { color: #f59e0b; }
+.sidebar .contact-item ion-icon { color: #ff7675; }
 
 .sidebar .contact-item .icon-box {
   width: 36px;
@@ -669,7 +669,10 @@ main {
 }
 
 @media (min-width: 768px) {
-  .sidebar[data-sidebar] { padding-top: 78px; }
+  .sidebar[data-sidebar] { padding-top: 18px; }
+  .sidebar .avatar-box { align-self: start; }
+  .sidebar .info-content { margin-top: 36px; }
+  .sidebar .contacts-list { margin-top: 52px; }
   .sidebar .navbar { padding: 0 30px; }
   .sidebar .navbar-list { gap: 30px; }
   .sidebar .navbar-link {
@@ -1702,7 +1705,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   main {
-    margin-top: 60px;
+    margin-top: 16px;
     margin-bottom: 100px;
   }
 
