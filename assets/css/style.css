@@ -431,7 +431,7 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
-  margin-bottom: 12px;
+  margin-bottom: 0;
   max-height: none;
   overflow: hidden;
   transition: var(--transition-2);
@@ -517,8 +517,8 @@ main {
   }
 
   .sidebar .avatar-box img {
-    width: 96px;
-    height: 128px;
+    width: 128px;
+    height: 170px;
   }
 }
 
@@ -528,6 +528,8 @@ main {
 }
 
 .sidebar .contact-item { gap: 12px; }
+
+.sidebar .contact-item ion-icon { color: #f59e0b; }
 
 .sidebar .contact-item .icon-box {
   width: 36px;
@@ -632,6 +634,32 @@ main {
 .navbar-link:focus { color: var(--light-gray-70); }
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
+
+/* Navigation belongs to the profile banner at every viewport width. */
+.sidebar .navbar {
+  position: static;
+  width: 100%;
+  margin-top: 12px;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--jet);
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.sidebar .navbar-list {
+  gap: 8px 24px;
+  padding: 10px 0 0;
+}
+
+.sidebar .navbar-link { padding: 8px 6px; }
+
+@media (min-width: 768px) {
+  .sidebar .navbar-list { gap: 36px; }
+}
+
 
 
 
@@ -1671,7 +1699,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    margin-bottom: 12px;
+    margin-bottom: 0;
   }
 
   .sidebar-info { gap: 25px; }
@@ -2212,7 +2240,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar {
     position: static;
     height: auto;
-    margin-bottom: 12px;
+    margin-bottom: 0;
     padding: 30px;
   }
 
