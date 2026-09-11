@@ -431,7 +431,7 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   max-height: none;
   overflow: hidden;
   transition: var(--transition-2);
@@ -1623,7 +1623,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    margin-bottom: 30px;
+    margin-bottom: 12px;
   }
 
   .sidebar-info { gap: 25px; }
@@ -2149,7 +2149,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 25px;
+    gap: 12px;
   }
 
   .main-content {
