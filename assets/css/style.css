@@ -635,34 +635,48 @@ main {
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
-/* Navigation belongs to the profile banner at every viewport width. */
+/* Anchor the navigation to the profile card's top-right corner. */
+.sidebar[data-sidebar] {
+  position: relative;
+  padding-top: 66px;
+}
+
 .sidebar .navbar {
-  position: static;
-  width: 100%;
-  margin-top: 12px;
-  padding: 0;
-  border: 0;
-  border-top: 1px solid var(--jet);
-  border-radius: 0;
-  background: transparent;
-  backdrop-filter: none;
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: auto;
+  left: auto;
+  width: max-content;
+  max-width: calc(100% + 2px);
+  margin: 0;
+  padding: 0 10px;
+  border: 1px solid var(--jet);
+  border-radius: 0 20px;
+  background: var(--navbar-bg);
   box-shadow: none;
 }
 
 .sidebar .navbar-list {
-  gap: 8px 24px;
-  padding: 10px 0 0;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 0;
 }
 
-.sidebar .navbar-link { padding: 8px 6px; }
+.sidebar .navbar-link {
+  padding: 15px 0;
+  font-size: 11px;
+}
 
 @media (min-width: 768px) {
-  .sidebar .navbar-list { gap: 36px; }
+  .sidebar[data-sidebar] { padding-top: 78px; }
+  .sidebar .navbar { padding: 0 30px; }
+  .sidebar .navbar-list { gap: 30px; }
+  .sidebar .navbar-link {
+    padding: 20px 0;
+    font-size: 15px;
+  }
 }
-
-
-
-
 
 
 /*-----------------------------------*\
