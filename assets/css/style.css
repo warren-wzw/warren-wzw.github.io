@@ -432,12 +432,11 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
+  max-height: none;
   overflow: hidden;
   transition: var(--transition-2);
 }
 
-.sidebar.active { max-height: none; }
 
 .sidebar-info {
   position: relative;
@@ -470,47 +469,30 @@ main {
   border-radius: 8px;
 }
 
-.info_more-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  border-radius: 0 15px;
-  font-size: 13px;
-  color: var(--orange-yellow-crayola);
-  background: var(--border-gradient-onyx);
-  padding: 10px;
-  box-shadow: var(--shadow-2);
-  transition: var(--transition-1);
-  z-index: 1;
-}
-
-.info_more-btn::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: var(--bg-gradient-jet);
-  transition: var(--transition-1);
-  z-index: -1;
-}
-
-.info_more-btn:hover,
-.info_more-btn:focus { background: var(--bg-gradient-yellow-1); }
-
-.info_more-btn:hover::before,
-.info_more-btn:focus::before { background: var(--bg-gradient-yellow-2); }
-
-.info_more-btn span { display: none; }
-
 .sidebar-info_more {
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition-2);
-}
-
-.sidebar.active .sidebar-info_more {
   opacity: 1;
   visibility: visible;
+}
+
+/* Keep the always-visible contact block compact at every screen size. */
+.sidebar .separator { margin: 18px 0; }
+
+.sidebar .contacts-list { gap: 14px 20px; }
+
+.sidebar .contact-item { gap: 12px; }
+
+.sidebar .contact-item .icon-box {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.sidebar .contact-info {
+  width: calc(100% - 48px);
+  max-width: calc(100% - 48px);
+  overflow-wrap: anywhere;
 }
 
 .contacts-list {
@@ -1641,11 +1623,8 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    max-height: 180px;
     margin-bottom: 30px;
   }
-
-  .sidebar.active { max-height: none; }
 
   .sidebar-info { gap: 25px; }
 
@@ -1656,19 +1635,6 @@ textarea.form-input::-webkit-resizer { display: none; }
   .info-content .name { margin-bottom: 15px; }
 
   .info-content .title { padding: 5px 18px; }
-
-  .info_more-btn {
-    top: -30px;
-    right: -30px;
-    padding: 10px 15px;
-  }
-
-  .info_more-btn span {
-    display: block;
-    font-size: var(--fs-8);
-  }
-
-  .info_more-btn ion-icon { display: none; }
 
   .separator { margin: 32px 0; }
 
@@ -2219,7 +2185,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .info-content .title { margin: auto; }
 
-  .info_more-btn { display: none; }
 
   .sidebar-info_more {
     opacity: 1;
@@ -2239,10 +2204,7 @@ textarea.form-input::-webkit-resizer { display: none; }
     font-weight: var(--fw-300);
   }
 
-  .separator:last-of-type {
-    margin: 15px 0;
-    opacity: 0;
-  }
+  .sidebar .separator:last-of-type { margin: 14px 0; }
 
   .social-list { justify-content: center; }
 
