@@ -67,7 +67,7 @@
           <p class="title">Ph.D. Candidate</p>
         </div>
 
-        <button class="info_more-btn" data-sidebar-btn>
+        <button class="info_more-btn" type="button" data-sidebar-btn aria-expanded="false" aria-controls="sidebar-contacts">
           <span>Show Contacts</span>
 
           <ion-icon name="chevron-down"></ion-icon>
@@ -75,7 +75,7 @@
 
       </div>
 
-      <div class="sidebar-info_more">
+      <div class="sidebar-info_more" id="sidebar-contacts">
 
         <div class="separator"></div>
 
@@ -885,7 +885,7 @@
   <!--
     - custom js link
   -->
-  <!-- <script src="./assets/js/script.js"></script>  -->
+  <script src="./assets/js/contacts.js" defer></script>
   <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
   <script src="./assets/js/theme.js"></script>
 
