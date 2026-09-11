@@ -477,7 +477,20 @@ main {
 /* Keep the always-visible contact block compact at every screen size. */
 .sidebar .separator { margin: 18px 0; }
 
-.sidebar .contacts-list { gap: 14px 20px; }
+.sidebar .contacts-list {
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.sidebar .info-content { min-width: 0; }
+
+.sidebar .avatar-box { flex-shrink: 0; }
+
+.sidebar .social-list {
+  justify-content: center;
+  padding: 0;
+}
 
 .sidebar .contact-item { gap: 12px; }
 
@@ -2146,15 +2159,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   main {
     max-width: 1200px;
     margin-inline: auto;
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 12px;
+    display: block;
   }
 
   .main-content {
-    min-width: 75%;
-    width: 75%;
+    min-width: 0;
+    width: 100%;
     margin: 0;
   }
 
@@ -2165,49 +2175,13 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    position: sticky;
-    top: 60px;
-    max-height: max-content;
-    height: 100%;
-    margin-bottom: 0;
-    padding-top: 60px;
-    z-index: 1;
+    position: static;
+    height: auto;
+    margin-bottom: 12px;
+    padding: 30px;
   }
 
-  .sidebar-info { flex-direction: column; }
-
-  .avatar-box img { width: 150px; }
-
-  .info-content .name {
-    white-space: nowrap;
-    text-align: center;
-  }
-
-  .info-content .title { margin: auto; }
-
-
-  .sidebar-info_more {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .contacts-list { grid-template-columns: 1fr; }
-
-  .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  .contact-info :is(.contact-link, time, address) {
-    --fs-7: 14px;
-    font-weight: var(--fw-300);
-  }
-
-  .sidebar .separator:last-of-type { margin: 14px 0; }
-
-  .social-list { justify-content: center; }
-
+  .avatar-box img { width: 120px; }
 
   /**
 	 * RESUME
