@@ -2399,6 +2399,7 @@ html {
   flex-shrink: 0;
   align-items: center;
   gap: 4px;
+  line-height: 1;
   white-space: nowrap;
 }
 
@@ -2406,6 +2407,7 @@ html {
   width: 14px;
   height: 14px;
   font-size: 14px;
+  transform: translateY(-1px);
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
