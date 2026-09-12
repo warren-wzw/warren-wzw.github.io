@@ -671,7 +671,7 @@ main {
 @media (min-width: 768px) {
   .sidebar[data-sidebar] { padding-top: 18px; }
   .sidebar .avatar-box { align-self: start; }
-  .sidebar .info-content { margin-top: 36px; }
+  .sidebar .info-content { margin-top: 0; }
   .sidebar .contacts-list { margin-top: 52px; }
   .sidebar .navbar { padding: 0 30px; }
   .sidebar .navbar-list { gap: 30px; }
@@ -2334,4 +2334,62 @@ html {
 
 @media (min-width: 1024px) {
   .site-footer { margin-top: -35px; }
+}
+
+/* Profile links and the shared left edge of navigation and contacts. */
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-top: 0;
+  min-width: 0;
+  grid-column: 2;
+}
+
+.profile-link {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  max-width: 100%;
+  padding: 3px 10px;
+  border-radius: 16px;
+  background: var(--onyx);
+  color: #ff7675;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.profile-link img, .profile-link ion-icon { flex-shrink: 0; }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar .info-content, .sidebar .profile-links { margin-top: 52px; }
+  .sidebar .profile-links { grid-column: 3; grid-row: 1; }
+  .sidebar .contacts-list { grid-column: 2 / -1; grid-row: 2; margin-top: 0; }
+}
+
+@media (min-width: 1024px) {
+  .sidebar[data-sidebar] { --profile-nav-width: 360px; }
+
+  .sidebar .navbar { width: var(--profile-nav-width); }
+  .sidebar .navbar-list { justify-content: space-between; gap: 0; }
+  .sidebar .navbar-link { font-size: 13px; }
+
+  .sidebar .sidebar-info {
+    grid-template-columns: auto minmax(150px, 0.9fr) minmax(170px, 1fr) calc(var(--profile-nav-width) - 24px);
+    column-gap: 16px;
+  }
+
+  .sidebar .avatar-box img { width: 100px; height: 133px; }
+  .sidebar .info-content .name { font-size: 22px; }
+  .sidebar .profile-links { grid-column: 3; grid-row: 1; }
+  .sidebar .contacts-list { grid-column: 4; padding-left: 30px; }
+}
+
+@media (min-width: 1250px) {
+  .sidebar[data-sidebar] { --profile-nav-width: 440px; }
+  .sidebar .navbar-link { font-size: 15px; }
+  .sidebar .avatar-box img { width: 128px; height: 170px; }
+  .sidebar .info-content .name { font-size: 26px; }
 }
