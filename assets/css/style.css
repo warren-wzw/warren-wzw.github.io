@@ -2303,10 +2303,15 @@ html {
 
 .site-footer {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
+  gap: 12px 24px;
   min-width: 259px;
   margin: -35px 12px 30px;
 }
+
+.site-footer .social-list { padding: 0; }
 
 .visitor-count {
   display: inline-flex;
@@ -2339,12 +2344,11 @@ html {
 /* Profile links and the shared left edge of navigation and contacts. */
 .profile-links {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
-  margin-top: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 16px;
   min-width: 0;
-  grid-column: 2;
 }
 
 .profile-link {
@@ -2373,8 +2377,7 @@ html {
 .profile-link span { color: var(--light-gray-70); font-size: 12px; }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  .sidebar .info-content, .sidebar .profile-links { margin-top: 52px; }
-  .sidebar .profile-links { grid-column: 3; grid-row: 1; }
+  .sidebar .info-content { margin-top: 52px; }
   .sidebar .contacts-list { grid-column: 2 / -1; grid-row: 2; margin-top: 0; }
 }
 
@@ -2386,14 +2389,13 @@ html {
   .sidebar .navbar-link { font-size: 13px; }
 
   .sidebar .sidebar-info {
-    grid-template-columns: auto minmax(150px, 0.9fr) minmax(170px, 1fr) calc(var(--profile-nav-width) - 24px);
+    grid-template-columns: auto minmax(0, 1fr) calc(var(--profile-nav-width) - 24px);
     column-gap: 16px;
   }
 
   .sidebar .avatar-box img { width: 100px; height: 133px; }
   .sidebar .info-content .name { font-size: 22px; }
-  .sidebar .profile-links { grid-column: 3; grid-row: 1; }
-  .sidebar .contacts-list { grid-column: 4; padding-left: 30px; }
+  .sidebar .contacts-list { grid-column: 3; padding-left: 30px; }
 }
 
 @media (min-width: 1250px) {
