@@ -1436,11 +1436,18 @@ main {
   transition: var(--transition-1);
 }
 
-#publications .blog-banner-box { height: auto; }
+#publications .blog-banner-box {
+  position: relative;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  flex-shrink: 0;
+}
 
 #publications .blog-banner-box img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   object-position: center;
 }
