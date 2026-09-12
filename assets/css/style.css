@@ -1449,7 +1449,7 @@ main {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center;
 }
 
 #publications .blog-content { padding-top: 8px; }
@@ -2420,4 +2420,19 @@ html {
   .sidebar .navbar-link { font-size: 15px; }
   .sidebar .avatar-box img { width: 128px; height: 170px; }
   .sidebar .info-content .name { font-size: 26px; }
+}
+
+/* Remove only the empty outer margins from the StrawSeg diagram. */
+#publications .publication-figure-trimmed {
+  aspect-ratio: 1170 / 470;
+  border-radius: 0;
+}
+
+#publications .publication-figure-trimmed img {
+  inset: auto;
+  top: -23.4043%;
+  left: -9.8291%;
+  width: 117.8633%;
+  max-width: none;
+  height: auto;
 }
