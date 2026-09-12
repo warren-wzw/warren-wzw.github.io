@@ -1436,6 +1436,11 @@ main {
   transition: var(--transition-1);
 }
 
+#publications .blog-banner-box img {
+  object-fit: contain;
+  object-position: center;
+}
+
 .blog-post-item > a:hover .blog-banner-box img { transform: scale(1.1); }
 
 .blog-content { padding: 15px; }
@@ -1480,6 +1485,7 @@ main {
 .publication-links {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   white-space: nowrap;
 }
