@@ -2340,8 +2340,8 @@ html {
 .profile-links {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
+  align-items: center;
+  gap: 8px;
   margin-top: 0;
   min-width: 0;
   grid-column: 2;
@@ -2350,18 +2350,27 @@ html {
 .profile-link {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
   align-items: center;
   gap: 4px 6px;
   max-width: 100%;
-  padding: 3px 10px;
-  border-radius: 16px;
+  padding: 5px 12px;
+  border-radius: 20px;
   background: var(--onyx);
   color: #ff7675;
-  font-size: 12px;
+  font-size: 15px;
   text-decoration: none;
 }
 
-.profile-link img, .profile-link ion-icon { flex-shrink: 0; }
+.profile-link img, .profile-link ion-icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  font-size: 18px;
+}
+
+.profile-link span { color: var(--light-gray-70); font-size: 12px; }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .sidebar .info-content, .sidebar .profile-links { margin-top: 52px; }
