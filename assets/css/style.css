@@ -2393,6 +2393,19 @@ html {
 
 .profile-link span { color: var(--light-gray-70); font-size: 12px; }
 
+.profile-link .profile-downloads {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.profile-link .profile-downloads ion-icon {
+  width: 14px;
+  height: 14px;
+  font-size: 14px;
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .sidebar .info-content { margin-top: 52px; }
   .sidebar .contacts-list { grid-column: 2 / -1; grid-row: 2; margin-top: 0; }
