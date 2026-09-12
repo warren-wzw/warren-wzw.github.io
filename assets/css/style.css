@@ -231,11 +231,14 @@ body {
   border: 1px solid var(--jet);
   border-radius: 50%;
   box-shadow: var(--shadow-2);
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
   transition: color var(--transition-1), background-color var(--transition-1), transform var(--transition-1);
   z-index: 10;
 }
 
-.theme-toggle:hover { transform: translateY(-2px); }
+.theme-toggle.is-dragging { cursor: grabbing; }
 
 .theme-toggle:focus-visible {
   outline: 2px solid var(--orange-yellow-crayola);
