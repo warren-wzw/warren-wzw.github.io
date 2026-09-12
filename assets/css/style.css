@@ -2395,6 +2395,8 @@ html {
 
 .profile-link .profile-downloads {
   display: inline-flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
   align-items: center;
   gap: 4px;
   white-space: nowrap;
