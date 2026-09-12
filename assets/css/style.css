@@ -1436,7 +1436,11 @@ main {
   transition: var(--transition-1);
 }
 
+#publications .blog-banner-box { height: auto; }
+
 #publications .blog-banner-box img {
+  width: 100%;
+  height: auto;
   object-fit: contain;
   object-position: center;
 }
@@ -2052,8 +2056,6 @@ textarea.form-input::-webkit-resizer { display: none; }
     display: flex;
     flex-direction: column;
   }
-
-  #publications .blog-banner-box { height: 150px; }
 
   #publications .blog-content {
     display: flex;
