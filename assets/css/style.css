@@ -2403,22 +2403,6 @@ html {
   .sidebar .info-content .name { font-size: 26px; }
 }
 
-/* Remove only the empty outer margins from the StrawSeg diagram. */
-#publications .publication-figure-trimmed {
-  aspect-ratio: 1170 / 470;
-  border-radius: 0;
-}
-
-#publications .publication-figure-trimmed img {
-  inset: auto;
-  top: -23.4043%;
-  left: -9.8291%;
-  width: 117.8633%;
-  max-width: none;
-  height: auto;
-}
-
-
 /* Publication rows: figure, title, authors, venue, and resource links. */
 #publications .blog-posts-list {
   grid-template-columns: minmax(0, 1fr);
@@ -2433,25 +2417,32 @@ html {
 }
 
 #publications .blog-banner-box {
-  aspect-ratio: 16 / 9;
-  border-radius: 2px;
+  aspect-ratio: 2 / 1;
+  border-radius: 0;
   background: #fff;
-  box-shadow: 0 5px 12px rgb(0 0 0 / 18%);
+  box-shadow: 6px 9px 12px rgb(0 0 0 / 30%);
 }
 
-#publications .publication-figure-trimmed { aspect-ratio: 1170 / 470; }
+/* Resize each diagram into the same frame without clipping its content. */
+#publications .blog-banner-box img { object-fit: fill; }
 
-/* Hide the source image's white margins, preserving the full diagram. */
-#publications .publication-figure-natural { aspect-ratio: 1169 / 804; }
-
+/* Exclude existing white margins before fitting these two diagrams. */
 #publications .publication-figure-natural img {
-  position: absolute;
   inset: auto;
   top: -13.9303%;
   left: -10.5218%;
   width: 121.6424%;
+  height: 127.2388%;
   max-width: none;
-  height: auto;
+}
+
+#publications .publication-figure-trimmed img {
+  inset: auto;
+  top: -23.4043%;
+  left: -9.8291%;
+  width: 117.8633%;
+  height: 151.2766%;
+  max-width: none;
 }
 
 #publications .blog-content {
