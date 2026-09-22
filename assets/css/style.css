@@ -2422,13 +2422,13 @@ html {
 /* Publication rows: figure, title, authors, venue, and resource links. */
 #publications .blog-posts-list {
   grid-template-columns: minmax(0, 1fr);
-  gap: 32px;
+  gap: 24px;
 }
 
 #publications .blog-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  align-items: start;
+  align-items: center;
   gap: 18px;
 }
 
@@ -2441,11 +2441,16 @@ html {
 
 #publications .publication-figure-trimmed { aspect-ratio: 1170 / 470; }
 
-#publications .publication-figure-natural { aspect-ratio: auto; }
+/* Hide the source image's white margins, preserving the full diagram. */
+#publications .publication-figure-natural { aspect-ratio: 1169 / 804; }
 
 #publications .publication-figure-natural img {
-  position: static;
-  width: 100%;
+  position: absolute;
+  inset: auto;
+  top: -13.9303%;
+  left: -10.5218%;
+  width: 121.6424%;
+  max-width: none;
   height: auto;
 }
 
@@ -2527,11 +2532,11 @@ html {
     gap: 24px;
   }
 
-  #publications .blog-banner-box { margin-top: 5px; }
+  #publications .blog-banner-box { margin-top: 0; }
 }
 
 @media (min-width: 1024px) {
-  #publications .blog-posts-list { gap: 38px; }
+  #publications .blog-posts-list { gap: 24px; }
   #publications .blog-card { gap: 30px; }
   #publications .blog-item-title { font-size: 17px; }
   .publication-authors { font-size: 15px; }
