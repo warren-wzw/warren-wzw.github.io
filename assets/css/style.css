@@ -1455,7 +1455,7 @@ main {
   object-position: center;
 }
 
-#publications .blog-content { padding-top: 8px; }
+
 
 .blog-post-item > a:hover .blog-banner-box img { transform: scale(1.1); }
 
@@ -2055,45 +2055,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
 
-@media (min-width: 900px) {
-  #publications .blog-posts-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-  }
-
-  #publications .blog-post-item,
-  #publications .blog-card { height: 100%; }
-
-  #publications .blog-card {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #publications .blog-content {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    padding: 8px 18px 18px;
-  }
-
-  #publications .blog-meta {
-    align-items: center;
-    min-height: 32px;
-  }
-
-  #publications .blog-item-title {
-    font-size: 18px;
-    line-height: 1.35;
-  }
-
-  #publications .blog-text { margin-top: auto; }
-
-  #publications .blog-meta :is(.blog-category, time) {
-    font-size: var(--fs-7);
-  }
-}
-
-
 /**
  * responsive larger than 1024px screen
  */
@@ -2455,4 +2416,114 @@ html {
   width: 117.8633%;
   max-width: none;
   height: auto;
+}
+
+
+/* Publication rows: figure, title, authors, venue, and resource links. */
+#publications .blog-posts-list {
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+}
+
+#publications .blog-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+}
+
+#publications .blog-banner-box {
+  aspect-ratio: 16 / 9;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 5px 12px rgb(0 0 0 / 18%);
+}
+
+#publications .publication-figure-trimmed { aspect-ratio: 1170 / 470; }
+
+#publications .blog-content {
+  min-width: 0;
+  padding: 0;
+}
+
+#publications .blog-item-title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.publication-authors {
+  margin-bottom: 7px;
+  color: var(--light-gray);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.publication-authors strong { color: var(--white-2); }
+
+#publications .blog-meta {
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  margin-bottom: 8px;
+}
+
+.publication-venue { display: inline; white-space: nowrap; }
+.publication-venue em { display: inline; }
+
+#publications .publication-links {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+}
+
+.paper-list-simple {
+  max-height: 420px;
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scrollbar-color: var(--light-gray-70) var(--eerie-black-1);
+  padding: 4px 18px 4px 0;
+  margin-bottom: 36px;
+  color: var(--light-gray);
+  font-size: 14px;
+  font-weight: var(--fw-300);
+  line-height: 1.8;
+}
+
+.paper-list-simple:focus-visible {
+  outline: 2px solid var(--orange-yellow-crayola);
+  outline-offset: 5px;
+}
+
+.paper-list-simple > div + div { margin-top: 28px; }
+
+.paper-list-simple h4 {
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--jet);
+  color: var(--white-2);
+  font-size: 18px;
+}
+
+.paper-list-simple li { margin-bottom: 12px; }
+.paper-list-simple strong { color: var(--white-2); font-weight: 600; }
+.paper-list-simple::-webkit-scrollbar { width: 7px; }
+.paper-list-simple::-webkit-scrollbar-track { background: var(--eerie-black-1); }
+.paper-list-simple::-webkit-scrollbar-thumb { background: var(--light-gray-70); border-radius: 8px; }
+
+@media (min-width: 580px) {
+  #publications .blog-card {
+    grid-template-columns: minmax(0, 28%) minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  #publications .blog-banner-box { margin-top: 5px; }
+}
+
+@media (min-width: 1024px) {
+  #publications .blog-posts-list { gap: 38px; }
+  #publications .blog-card { gap: 30px; }
+  #publications .blog-item-title { font-size: 20px; }
+  .publication-authors { font-size: 15px; }
 }
