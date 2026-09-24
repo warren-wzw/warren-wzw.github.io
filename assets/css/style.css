@@ -2544,7 +2544,7 @@ html {
   padding-top: 14px;
   margin-bottom: 28px;
   color: var(--light-gray-70);
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 300;
   line-height: 1.2;
   text-align: right;
@@ -2557,7 +2557,7 @@ html {
   margin-bottom: 10px;
   padding: 2px 12px;
   border-radius: 4px;
-  background: #ad36a5;
+  background: #c56820;
   color: #fff;
   font-size: 13px;
   font-weight: 600;
@@ -2610,5 +2610,5 @@ html {
 
 @media (max-width: 579px) {
   .publication-preview { width: min(100%, 280px); }
-  .publication-year { font-size: 30px; margin-bottom: 22px; }
+  .publication-year { font-size: 24px; margin-bottom: 22px; }
 }
