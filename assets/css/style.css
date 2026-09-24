@@ -245,7 +245,10 @@ body {
   outline-offset: 3px;
 }
 
-.theme-toggle ion-icon { font-size: 21px; }
+.theme-toggle ion-icon {
+  font-size: 21px;
+  pointer-events: none;
+}
 
 .theme-toggle__moon,
 [data-theme="light"] .theme-toggle__sun { display: none; }
@@ -2406,7 +2409,7 @@ html {
 /* Publication rows: figure, title, authors, venue, and resource links. */
 #publications .blog-posts-list {
   grid-template-columns: minmax(0, 1fr);
-  gap: 24px;
+  gap: 36px;
 }
 
 #publications .blog-card {
@@ -2418,9 +2421,9 @@ html {
 
 #publications .blog-banner-box {
   aspect-ratio: 2 / 1;
-  border-radius: 0;
+  border-radius: 4px;
   background: #fff;
-  box-shadow: 6px 9px 12px rgb(0 0 0 / 30%);
+  box-shadow: 0 3px 9px rgb(0 0 0 / 16%);
 }
 
 /* Resize each diagram into the same frame without clipping its content. */
@@ -2527,8 +2530,85 @@ html {
 }
 
 @media (min-width: 1024px) {
-  #publications .blog-posts-list { gap: 24px; }
-  #publications .blog-card { gap: 30px; }
+  #publications .blog-posts-list { gap: 40px; }
+  #publications .blog-card { gap: 48px; grid-template-columns: 250px minmax(0, 1fr); }
   #publications .blog-item-title { font-size: 17px; }
   .publication-authors { font-size: 15px; }
+}
+
+/* Year divisions and compact publication resources. */
+.publication-year-group + .publication-year-group { margin-top: 44px; }
+
+.publication-year {
+  border-top: 1px solid var(--jet);
+  padding-top: 14px;
+  margin-bottom: 28px;
+  color: var(--light-gray-70);
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.2;
+  text-align: right;
+}
+
+.publication-preview { min-width: 0; }
+
+#publications .publication-venue {
+  display: table;
+  margin-bottom: 10px;
+  padding: 2px 12px;
+  border-radius: 4px;
+  background: #ad36a5;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.3;
+  box-shadow: 0 2px 6px rgb(0 0 0 / 14%);
+}
+
+#publications .blog-meta {
+  color: var(--light-gray);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+#publications .blog-meta time {
+  color: inherit;
+  font-size: inherit;
+  font-weight: 400;
+}
+
+#publications .publication-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 32px;
+  min-width: 72px;
+  padding: 4px 14px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  color: var(--white-2);
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.4;
+  text-transform: uppercase;
+  transition: background var(--transition-1), color var(--transition-1);
+}
+
+#publications a.publication-link:hover {
+  background: var(--white-2);
+  color: var(--eerie-black-2);
+  opacity: 1;
+}
+
+#publications a.publication-link:focus-visible {
+  outline: 2px solid var(--orange-yellow-crayola);
+  outline-offset: 4px;
+}
+
+#publications .publication-link.is-disabled { opacity: .35; }
+
+@media (max-width: 579px) {
+  .publication-preview { width: min(100%, 280px); }
+  .publication-year { font-size: 30px; margin-bottom: 22px; }
 }

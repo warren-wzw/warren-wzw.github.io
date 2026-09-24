@@ -30,26 +30,30 @@ try {
 } catch (error) {}
 
 themeToggle.addEventListener('pointerdown', (event) => {
-  if (!event.isPrimary || event.button !== 0 || drag) return;
+  if (event.pointerType === 'touch' || !event.isPrimary || event.button !== 0 || drag) return;
   const { left, top } = themeToggle.getBoundingClientRect();
   suppressClick = false;
   drag = { id: event.pointerId, x: event.clientX, y: event.clientY, left, top, moved: false };
   themeToggle.setPointerCapture(event.pointerId);
 });
 
-themeToggle.addEventListener('pointermove', (event) => {
-  if (!drag || event.pointerId !== drag.id) return;
-  const dx = event.clientX - drag.x;
-  const dy = event.clientY - drag.y;
+const moveDrag = (x, y) => {
+  const dx = x - drag.x;
+  const dy = y - drag.y;
   if (!drag.moved && Math.hypot(dx, dy) < 6) return;
   drag.moved = true;
   suppressClick = true;
   themeToggle.classList.add('is-dragging');
   setTogglePosition(drag.left + dx, drag.top + dy);
+};
+
+themeToggle.addEventListener('pointermove', (event) => {
+  if (event.pointerType === 'touch' || !drag || drag.touch || event.pointerId !== drag.id) return;
+  moveDrag(event.clientX, event.clientY);
 });
 
 const finishDrag = (event) => {
-  if (!drag || event.pointerId !== drag.id) return;
+  if (event.pointerType === 'touch' || !drag || drag.touch || event.pointerId !== drag.id) return;
   if (drag.moved) saveTogglePosition();
   drag = null;
   themeToggle.classList.remove('is-dragging');
@@ -61,6 +65,38 @@ const finishDrag = (event) => {
 themeToggle.addEventListener('pointerup', finishDrag);
 themeToggle.addEventListener('pointercancel', finishDrag);
 themeToggle.addEventListener('lostpointercapture', finishDrag);
+
+// Handle touch directly so mobile browsers do not take over the drag as scrolling.
+themeToggle.addEventListener('touchstart', (event) => {
+  if (drag || event.touches.length !== 1) return;
+  const touch = event.changedTouches[0];
+  const { left, top } = themeToggle.getBoundingClientRect();
+  suppressClick = false;
+  drag = { id: touch.identifier, x: touch.clientX, y: touch.clientY, left, top, moved: false, touch: true };
+}, { passive: true });
+
+themeToggle.addEventListener('touchmove', (event) => {
+  if (!drag || !drag.touch) return;
+  const touch = Array.from(event.changedTouches).find((item) => item.identifier === drag.id);
+  if (!touch) return;
+  if (event.cancelable) event.preventDefault();
+  moveDrag(touch.clientX, touch.clientY);
+}, { passive: false });
+
+const finishTouchDrag = (event) => {
+  if (!drag || !drag.touch) return;
+  if (!Array.from(event.changedTouches).some((item) => item.identifier === drag.id)) return;
+  if (drag.moved) {
+    if (event.cancelable) event.preventDefault();
+    saveTogglePosition();
+  }
+  drag = null;
+  themeToggle.classList.remove('is-dragging');
+};
+
+themeToggle.addEventListener('touchend', finishTouchDrag, { passive: false });
+themeToggle.addEventListener('touchcancel', finishTouchDrag, { passive: false });
+
 
 window.addEventListener('resize', () => {
   const { left, top } = themeToggle.getBoundingClientRect();
