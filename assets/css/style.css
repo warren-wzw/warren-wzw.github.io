@@ -2540,14 +2540,22 @@ html {
 .publication-year-group + .publication-year-group { margin-top: 28px; }
 
 .publication-year {
-  border-top: 1px solid var(--jet);
-  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 16px;
   color: var(--light-gray-70);
   font-size: 26px;
   font-weight: 300;
   line-height: 1.2;
-  text-align: right;
+  text-align: left;
+}
+
+.publication-year::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--jet);
 }
 
 .publication-preview { min-width: 0; }
