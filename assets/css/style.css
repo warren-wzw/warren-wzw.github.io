@@ -2409,7 +2409,7 @@ html {
 /* Publication rows: figure, title, authors, venue, and resource links. */
 #publications .blog-posts-list {
   grid-template-columns: minmax(0, 1fr);
-  gap: 36px;
+  gap: 24px;
 }
 
 #publications .blog-card {
@@ -2530,19 +2530,19 @@ html {
 }
 
 @media (min-width: 1024px) {
-  #publications .blog-posts-list { gap: 40px; }
-  #publications .blog-card { gap: 48px; grid-template-columns: 250px minmax(0, 1fr); }
+  #publications .blog-posts-list { gap: 24px; }
+  #publications .blog-card { gap: 32px; grid-template-columns: 250px minmax(0, 1fr); }
   #publications .blog-item-title { font-size: 17px; }
   .publication-authors { font-size: 15px; }
 }
 
 /* Year divisions and compact publication resources. */
-.publication-year-group + .publication-year-group { margin-top: 44px; }
+.publication-year-group + .publication-year-group { margin-top: 28px; }
 
 .publication-year {
   border-top: 1px solid var(--jet);
-  padding-top: 14px;
-  margin-bottom: 28px;
+  padding-top: 10px;
+  margin-bottom: 16px;
   color: var(--light-gray-70);
   font-size: 26px;
   font-weight: 300;
@@ -2610,5 +2610,5 @@ html {
 
 @media (max-width: 579px) {
   .publication-preview { width: min(100%, 280px); }
-  .publication-year { font-size: 24px; margin-bottom: 22px; }
+  .publication-year { font-size: 24px; margin-bottom: 16px; }
 }
