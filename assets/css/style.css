@@ -2568,7 +2568,7 @@ html {
 #publications .blog-meta {
   color: var(--light-gray);
   font-size: 14px;
-  font-style: italic;
+  font-style: normal;
   line-height: 1.5;
 }
 
