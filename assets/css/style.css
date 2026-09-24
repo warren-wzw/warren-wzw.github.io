@@ -2557,7 +2557,7 @@ html {
   margin-bottom: 10px;
   padding: 2px 12px;
   border-radius: 4px;
-  background: #c56820;
+  background: var(--link-accent);
   color: #fff;
   font-size: 13px;
   font-weight: 600;
