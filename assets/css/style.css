@@ -994,10 +994,10 @@ main {
 
 .reviewer-list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 210px));
+  justify-content: space-evenly;
   gap: 20px;
   width: 100%;
-  max-width: 900px;
   margin-inline: auto;
 }
 
