@@ -1001,6 +1001,10 @@ main {
   margin-inline: auto;
 }
 
+.reviewer-group-title { margin-bottom: 15px; }
+
+.reviewer-list + .reviewer-group-title { margin-top: 30px; }
+
 .reviewer-item {
   display: flex;
   flex-direction: column;
