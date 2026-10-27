@@ -2340,7 +2340,7 @@ html {
 
 .profile-links-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   gap: 10px 16px;
@@ -2355,6 +2355,7 @@ html {
   text-align: left;
   align-items: center;
   gap: 4px 6px;
+  min-width: 0;
   max-width: 100%;
   padding: 5px 12px;
   border-radius: 20px;
@@ -2372,6 +2373,25 @@ html {
 }
 
 .profile-link span { color: var(--light-gray-70); font-size: 12px; }
+
+@media (max-width: 579px) {
+  .profile-links-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .profile-link {
+    justify-content: center;
+    text-align: center;
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .profile-link span { font-size: 10px; }
+}
 
 .profile-link .profile-downloads {
   display: inline-flex;
