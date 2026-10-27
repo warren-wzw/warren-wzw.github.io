@@ -2332,10 +2332,19 @@ html {
 /* Profile links and the shared left edge of navigation and contacts. */
 .profile-links {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.profile-links-row {
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 10px 16px;
+  max-width: 100%;
   min-width: 0;
 }
 
