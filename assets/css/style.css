@@ -2453,7 +2453,8 @@ html {
 }
 
 #publications .blog-banner-box {
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 10;
+  width: 85%;
   border-radius: 4px;
   background: #fff;
   box-shadow: 0 3px 9px rgb(0 0 0 / 16%);
