@@ -2654,3 +2654,11 @@ html {
   .publication-preview { width: min(100%, 280px); }
   .publication-year { font-size: 24px; margin-bottom: 16px; }
 }
+
+/* Prevent saving / opening the unpublished DMOS figure directly. */
+#publications .publication-protected {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
